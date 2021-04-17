@@ -36,13 +36,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginBottom: 5,
+    backgroundColor: "#f2f2f2",
   },
   input: {
     width: "80%",
     padding: 5,
+    paddingLeft: 10,
     marginVertical: 10,
     borderColor: "grey",
-    borderWidth: 1,
+    borderWidth: 0.2,
+    borderRadius: 8,
+    backgroundColor: "white",
   },
   buttonContainer: {
     flexDirection: "row",

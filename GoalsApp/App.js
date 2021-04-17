@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, View, FlatList, Button } from "react-native";
+import { ListItem } from "react-native-elements";
 import GoalItem from "./components/GoalItem";
 import GoalInput from "./components/GoalInput";
 
@@ -24,6 +25,13 @@ export default function App() {
   const cancelAddMode = () => {
     setAddMode(false);
   };
+
+  const renderItem = (item) => (
+    <ListItem bottomDivider>
+      <GoalItem onDelete={removeGoalHandler} obj={item} />
+    </ListItem>
+  );
+
   return (
     <View style={styles.screen}>
       <View style={styles.button}>
@@ -41,9 +49,7 @@ export default function App() {
       <FlatList
         keyExtractor={(item, index) => item.id}
         data={courseGoals}
-        renderItem={(itemData) => (
-          <GoalItem onDelete={removeGoalHandler} obj={itemData} />
-        )}
+        renderItem={renderItem}
       />
     </View>
   );

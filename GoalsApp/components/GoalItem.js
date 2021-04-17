@@ -14,12 +14,9 @@ const GoalItem = ({ obj, onDelete }) => {
 
 const styles = StyleSheet.create({
   listItem: {
-    padding: 10,
+    flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    backgroundColor: "#ccc",
-    borderColor: "black",
-    borderWidth: 1,
     marginBottom: 5,
     alignItems: "center",
   },
