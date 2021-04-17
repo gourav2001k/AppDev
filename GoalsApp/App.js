@@ -18,9 +18,7 @@ export default function App() {
 
   const removeGoalHandler = (goalId) => {
     setCourseGoals((currentGoals) => {
-      return currentGoals.filter((goal) => {
-        goal.id !== goalId;
-      });
+      return currentGoals.filter((goal) => goal.id !== goalId);
     });
   };
   const cancelAddMode = () => {
@@ -52,7 +50,7 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  screen: { padding: 30 },
+  screen: { padding: 30, backgroundColor: "#f2f2f2" },
   button: {
     marginVertical: 20,
   },
