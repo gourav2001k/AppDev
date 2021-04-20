@@ -1,6 +1,8 @@
 import React from "react";
 import { View, StyleSheet, Button, Text, Image } from "react-native";
+
 import BodyText from "../components/BodyText";
+import Btn from "../components/Btn";
 import TitleText from "../components/TitleText";
 import Colors from "../constants/colors";
 
@@ -24,7 +26,7 @@ const GameOver = (props) => {
         <Text style={styles.highlight}>{props.noOfRounds}</Text> to guess the
         number <Text style={styles.highlight}>{props.target}</Text>.
       </BodyText>
-      <Button title={"NEW GAME"} onPress={props.onRestart} />
+      <Btn onPress={props.onRestart}>NEW GAME</Btn>
     </View>
   );
 };
