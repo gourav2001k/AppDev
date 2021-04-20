@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   View,
-  Text,
   StyleSheet,
   Button,
   TouchableWithoutFeedback,
@@ -117,7 +116,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingHorizontal: 15,
   },
-  title: { fontSize: 20, marginVertical: 10, fontFamily: "open-sans-bold" },
+  title: { fontSize: 20, marginVertical: 10, fontFamily: "roboto-regular" },
   inputContainer: {
     width: 300,
     maxWidth: "80%",
