@@ -33,7 +33,9 @@ const MealsNavigator = () => {
         <Stack.Screen
           name="CategoryMeals"
           component={CategoryMealsScreen}
-          options={extractTitle}
+          options={({ route }) => ({
+            title: route.params.title,
+          })}
         />
         <Stack.Screen
           name="MealDetails"
