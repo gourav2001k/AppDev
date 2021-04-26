@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { View, FlatList, StyleSheet, Text } from "react-native";
 import { MEALS, CATEGORIES } from "../data/dummyData";
-import MealItem from "../components/MealItem";
+
+import MealList from "../components/MealList";
 
 const CategoryMealsScreen = (props) => {
   useEffect(() => {
@@ -12,29 +12,7 @@ const CategoryMealsScreen = (props) => {
   const displayedMeals = MEALS.filter(
     (meal) => meal.categoryIDs.indexOf(catID) >= 0
   );
-
-  const renderMealItem = (itemData) => {
-    return <MealItem item={itemData.item} />;
-  };
-
-  return (
-    <View style={styles.screen}>
-      <FlatList
-        data={displayedMeals}
-        renderItem={renderMealItem}
-        style={{ width: "100%" }}
-      />
-    </View>
-  );
+  return <MealList listData={displayedMeals} navigation={props.navigation} />;
 };
-
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 15,
-  },
-});
 
 export default CategoryMealsScreen;
