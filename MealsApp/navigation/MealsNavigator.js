@@ -21,6 +21,7 @@ const MealsNavigator = () => {
     <Stack.Navigator
       screenOptions={{
         headerStyle: { backgroundColor: Colors.primary },
+        headerTitleStyle: { fontFamily: "roboto-regular" },
         headerTintColor: "white",
       }}
     >
@@ -36,6 +37,7 @@ const FavNavigator = () => {
     <Stack.Navigator
       screenOptions={{
         headerStyle: { backgroundColor: Colors.primary },
+        headerTitleStyle: { fontFamily: "roboto-regular" },
         headerTintColor: "white",
       }}
     >
@@ -50,6 +52,7 @@ const FilterNavigator = () => {
     <Stack.Navigator
       screenOptions={{
         headerStyle: { backgroundColor: Colors.primary },
+        headerTitleStyle: { fontFamily: "roboto-regular" },
         headerTintColor: "white",
       }}
     >
