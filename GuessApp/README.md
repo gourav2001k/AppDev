@@ -1,6 +1,6 @@
 # Guess App
 
-A simple game app, wher the user has to select a number at the start of the game and then the computer will try to find the number by guessing. Now the user have to give hints based on guesses made by the computer player and direct them wheter we need to go up or down from the current guess.
+A simple game app, where the user has to select a number at the start of the game and then the computer will try to find the number by guessing. Now the user have to give hints based on guesses made by the computer player and direct them wheter we need to go up or down from the current guess.
 
 Fairly simple UI. The changes made on the goal list is retained only till the session lasts. Reloading the app will discard previous changes. App can be run on a emulator as well as on a real device.
 
