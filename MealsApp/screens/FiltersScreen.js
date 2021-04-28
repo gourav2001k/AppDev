@@ -27,13 +27,9 @@ const FiltersScreen = (props) => {
           />
         </HeaderButtons>
       ),
-      headerRight: () => (
-        <HeaderButtons HeaderButtonComponent={HeaderButton}>
-          <Item title="Save" iconName="ios-save" onPress={onSave} />
-        </HeaderButtons>
-      ),
       title: "Filter Meals",
     });
+    onSave();
   });
 
   const [isGlutenFree, setIsGlutenFree] = useState(false);

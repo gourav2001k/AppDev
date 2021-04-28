@@ -21,7 +21,8 @@ const CategoryMealsScreen = (props) => {
     return (
       <View style={styles.empty}>
         <Text style={styles.text}>
-          No meals currently available under this Category.
+          No meals currently available under this Category.{"\n"} Maybe check
+          your Filters
         </Text>
       </View>
     );
