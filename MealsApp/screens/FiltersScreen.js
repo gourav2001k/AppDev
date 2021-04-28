@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, Switch } from "react-native";
+import { useDispatch } from "react-redux";
 
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import HeaderButton from "../components/HeaderButton";
+import { setFilters } from "../store/actions/meals";
 
 const FilterSwitch = (props) => {
   return (
@@ -27,19 +29,7 @@ const FiltersScreen = (props) => {
       ),
       headerRight: () => (
         <HeaderButtons HeaderButtonComponent={HeaderButton}>
-          <Item
-            title="Save"
-            iconName="ios-save"
-            onPress={() => {
-              const appliedFilters = {
-                glutenFree: isGlutenFree,
-                lactoseFree: isLactoseFree,
-                vegan: isVegan,
-                vegetarian: isVegetarian,
-              };
-              console.log(appliedFilters);
-            }}
-          />
+          <Item title="Save" iconName="ios-save" onPress={onSave} />
         </HeaderButtons>
       ),
       title: "Filter Meals",
@@ -50,6 +40,19 @@ const FiltersScreen = (props) => {
   const [isLactoseFree, setIsLactoseFree] = useState(false);
   const [isVegan, setIsVegan] = useState(false);
   const [isVegetarian, setIsVegetarian] = useState(false);
+
+  const dispatch = useDispatch();
+
+  const onSave = () => {
+    dispatch(
+      setFilters({
+        glutenFree: isGlutenFree,
+        lactoseFree: isLactoseFree,
+        vegan: isVegan,
+        vegetarian: isVegetarian,
+      })
+    );
+  };
 
   return (
     <View style={styles.screen}>

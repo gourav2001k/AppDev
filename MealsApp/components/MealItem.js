@@ -26,7 +26,7 @@ const MealItem = (props) => {
             </ImageBackground>
           </View>
           <View style={styles.mealDetail}>
-            <DefaultText>{item.duration}</DefaultText>
+            <DefaultText>{item.duration} MIN</DefaultText>
             <DefaultText>{item.complexity.toUpperCase()}</DefaultText>
             <DefaultText>{item.affordability.toUpperCase()}</DefaultText>
           </View>

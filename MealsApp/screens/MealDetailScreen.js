@@ -18,10 +18,10 @@ const ListItem = (props) => {
 const MealDetailScreen = (props) => {
   const MEALS = useSelector((state) => state.meals.meals);
   const mealID = props.route.params["mealID"];
+  const meal = MEALS.find((mel) => mel.id === mealID);
   const isFav = useSelector((state) =>
-    state.meals.favouriteMeals.some((meal) => (meal.id = mealID))
+    state.meals.favouriteMeals.some((mel) => mel.id === mealID)
   );
-  const meal = MEALS.find((meal) => meal.id === mealID);
   useEffect(() => {
     props.navigation.setOptions({
       title: meal.title,
