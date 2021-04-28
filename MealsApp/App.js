@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
 import * as Font from "expo-font";
 import AppLoading from "expo-app-loading";
+import { createStore, combineReducers } from "redux";
+import { Provider } from "react-redux";
 
-import TabNavigator from "./navigation/MealsNavigator";
+import MealsNavigator from "./navigation/MealsNavigator";
+import mealsReducer from "./store/reducers/meals";
 
 const fecthFonts = () => {
   return Font.loadAsync({
@@ -13,6 +15,10 @@ const fecthFonts = () => {
     "roboto-medium": require("./assets/fonts/Roboto-Medium.ttf"),
   });
 };
+
+const rootReducer = combineReducers({ meals: mealsReducer });
+
+const store = createStore(rootReducer);
 
 export default function App() {
   const [fontLoaded, setFontloaded] = useState(false);
@@ -27,14 +33,9 @@ export default function App() {
       />
     );
   }
-  return <TabNavigator />;
+  return (
+    <Provider store={store}>
+      <MealsNavigator />
+    </Provider>
+  );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
